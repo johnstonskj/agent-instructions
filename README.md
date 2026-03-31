@@ -54,8 +54,4 @@ Each agent file should include specific guidance based on that agents behavior o
 
 ### Claude
 
-The default content for the `CLAUDE.md` file is:
-
-```text
-@AGENTS.md
-```
+The default behavior for the `CLAUDE.md` file is to reference the `AGENTS.md` file, as in the example [`claude/CLAUDE-DEFAULT.md`](./claude/CLAUDE-DEFAULT.md).

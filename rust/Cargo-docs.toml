@@ -1,0 +1,9 @@
+[package.metadata.docs.rs]
+# This allows only the default target ("x86_64-unknown-linux-gnu") to run.
+targets = []
+
+# Generally you want to document all.
+all-features = true
+
+# Uncomment the following to add custom stylesheets/scripts to the generated HTML files.
+# rustdoc-args = [ "--html-in-header", "doc-src/header.html" ]

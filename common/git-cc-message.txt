@@ -1,0 +1,27 @@
+type(scope): Summary
+# <type>(<scope>)(!): <short summary>
+#   │       │     │       │
+#   │       │     │       └─⫸ Summary in present tense.
+#   │       │     │           Not capitalized.
+#   │       │     │           No period at the end.
+#   │       │     │           Use the imperative, present tense.
+#   │       │     │
+#   │       │     └─⫸ Breaking change flag.
+#   │       │
+#   │       └─⫸ Commit Scope: project-dependent
+#   │
+#   └─⫸ Commit Type: feat|fix
+#                  | build|chore|docs|ops|perf|refactor|style|test
+#----------------------------------MAX LENGTH (52)  ^
+
+# Body text is simple paragraphs, which may include (but if used, should
+# start with) a keyword such as [Add] etc. Use the imperative, present
+# tense: "change" not "changed" nor "changes"
+#------------------------------------------------------MAX LENGTH (72)  ^
+
+# Add Footer values (name: value) for additional information
+# - BREAKING-CHANGE
+# - About people: Signed-off-by, Reviewed-by, Co-authored-by
+# - About commits: Amend, Ref, Revert, See-Also
+# - About issues: Fix, Resolve, Close, See-Also
+# - More information: Specification, See-Also
