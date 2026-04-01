@@ -23,7 +23,7 @@ You have permission to do another pass of the code if you believe it is not full
 
 ## Preferred Tools
 
-Tool specification **MAY** be externalized to [mise](https://mise.jdx.dev) by providing a `mise.toml` file. A default configuration is included in [`mise.toml`](./mise.toml).
+Tool specification **MAY** be externalized to [mise](https://mise.jdx.dev) by providing a `mise.toml` file. A default configuration is included in [@`mise.toml`](./mise.toml).
 
 ### Build
 
@@ -34,7 +34,7 @@ Tool specification **MAY** be externalized to [mise](https://mise.jdx.dev) by pr
 - **MUST** use `clippy` for linting and follow its suggestions
 - **MUST** ensure code compiles with no warnings (use `-D warnings` flag in CI, not `#![deny(warnings)]` in source)
 
-Configure the rust, doc, and clippy lints by adding the contents of @[`Cargo-lints.toml`](./Cargo-lints.toml) to the top-most `Cargo.toml` file.
+Configure the rust, doc, and clippy lints by adding the contents of [@`Cargo-lints.toml`](./Cargo-lints.toml) to the top-most `Cargo.toml` file.
 
 ### Continuous Integration/Deployment
 
@@ -82,7 +82,7 @@ More complex telemetry should:
 - **MUST** avoid including redundant comments which are tautological or self-demonstating; e.g. cases where it is easily parsable what the code does at a glance or its function name giving sufficient information as to what the code does, so the comment does nothing other than waste user time.
 - **MUST** avoid including comments which leak what this file contains, or leak the original user prompt, ESPECIALLY if it's irrelevant to the output code.
 
-The project should include an empty `rustfmt.toml` file such as @[`rustfmt.toml`](./rustfmt.toml).
+The project should include an empty `rustfmt.toml` file such as [@`rustfmt.toml`](./rustfmt.toml).
 
 Additional best practices include:
 
@@ -105,7 +105,7 @@ Additional best practices include:
   - with the code examples from `lib.rs` for library packages; use ` ```rust no_run` for examples with placeholders.
   - with command-line invocations with the `--help` option; use ` ```bash` for examples with placeholders.
 
-Include the content of @[`Cargo-docs.toml`](./Cargo-docs.toml) in each package's `Cargo.toml` file.
+Include the content of [@`Cargo-docs.toml`](./Cargo-docs.toml) in each package's `Cargo.toml` file.
 
 To include additional fonts, styles, or scripts, use the `rustdoc-args` key in the`docs` metadata in `Cargo.toml`.
 
@@ -220,13 +220,13 @@ use alloc::{
 - **MUST** mock external dependencies (APIs, databases, file systems).
 - **MUST** use the built-in `#[test]` attribute and `cargo test`.
 - Do not commit commented-out tests.
-- Use `#[cfg(test)]` sub-modules for unit test code (see @[`plain.rs`](./templates/plain.rs)).
-- Use the `test-log` attribute for test cases that require tracing initialization (see @[`integration_test.rs`](./templates/integration_test.rs)).
+- Use `#[cfg(test)]` sub-modules for unit test code (see [@]`plain.rs`](./templates/plain.rs)).
+- Use the `test-log` attribute for test cases that require tracing initialization (see [@`integration_test.rs`](./templates/integration_test.rs)).
 
 ### Code Coverage
 
 - Use `cargo-tarpaulin` to run coverage tests.
-- Include a @[`codecov.yml`](./codecov.yml) file with target set to **AT LEAST** 80%.
+- Include a [@`codecov.yml`](./codecov.yml) file with target set to **AT LEAST** 80%.
 
 ### Benchmarks
 
@@ -238,9 +238,9 @@ use alloc::{
 
 ## Version Control
 
-**ALWAYS** write clear, descriptive commit messages, following [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) style recommendations. Use the template @[`git-cc-message.txt`](../common/git-cc-message.txt) for Git commit messages.
+**ALWAYS** write clear, descriptive commit messages, following [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/) style recommendations. Use the template [@`git-cc-message.txt`](../common/git-cc-message.txt) for Git commit messages.
 
-The file @[`gitignore`](./gitignore) contains a minimal top-level `.gitignore` file for Rust.
+The file [@`gitignore`](./gitignore) contains a minimal top-level `.gitignore` file for Rust.
 
 ### Code Reviews
 
@@ -289,7 +289,7 @@ A key design goal is to separate the description of the command-line interface f
   - See section [Logging/Tracing](#loggingtracing) for more details.
 - Use a module `commands` to contain the actual command implementation. For complex cases this may have sub-modules per command.
 
-The file @[`main.rs`](./templates/main.rs) demonstrates a very clean implementation with clear separations of concern.
+The file [@`main.rs`](./templates/main.rs) demonstrates a very clean implementation with clear separations of concern.
 
 Include the following trait in the module `main`. This trait is implemented by the top-level CLI structure and any command structures. Additionally each command implementation is a struct, with a `new` function taking parameters from the cli, and implementing `OnceCommand`.
 
@@ -316,21 +316,21 @@ As in the `main` function above, CLI functions that propogate errors _should_ us
 
 ### Library Module
 
-The root of any library package, see @[`lib.rs`](./templates/lib.rs).
+The root of any library package, see [@`lib.rs`](./templates/lib.rs).
 
 ### Error Module
 
-The file @[`error.rs`](./templates/error.rs) is at the same level as the `lib.rs` or `main.rs` file. This makes use of
+The file [@`error.rs`](./templates/error.rs) is at the same level as the `lib.rs` or `main.rs` file. This makes use of
 the crate `thiserror` to define the error enumeration.
 
 ### General Module
 
-Any non-error module should follow the template @[`plain.rs`](./templates/plain.rs).
+Any non-error module should follow the template [@`plain.rs`](./templates/plain.rs).
 
 ### Unit Tests
 
-Unit tests should be included at the end of any general module, see the template @[`plain.rs`](./templates/plain.rs).
+Unit tests should be included at the end of any general module, see the template [@`plain.rs`](./templates/plain.rs).
 
 ### Test Files
 
-Integration tests are found in the `tests` directory of the crate and are all named `test_*.rs` using the template @[`integration_test.rs`](./templates/integration_test.rs).
+Integration tests are found in the `tests` directory of the crate and are all named `test_*.rs` using the template [@`integration_test.rs`](./templates/integration_test.rs).
