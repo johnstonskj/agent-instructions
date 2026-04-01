@@ -64,11 +64,10 @@ More complex telemetry should:
 
 - **ALWAYS** use the `chrono` crate for date handling/formatting.
   - Use `humantime` for date formatting for readability.
-- For data analytics:
-  - **ALWAYS** use `polars` instead of other data frame libraries for tabular data manipulation.
+- **ALWAYS** use `polars` instead of other data frame libraries for tabular data manipulation.
   - If a `polars` dataframe will be printed, **NEVER** simultaneously print the number of entries in the dataframe nor the schema as it is redundant.
   - **NEVER** ingest more than 10 rows of a data frame at a time. Only analyze subsets of data to avoid overloading your memory context.
-- For human-readable output, use the `i18n-embed` and `i18n-embed-fl` crates to provide for localized text.
+- For human-readable output, **ALWAYS** use the `i18n-embed` and `i18n-embed-fl` crates to provide for localized text.
 
 ## Code Generation
 
